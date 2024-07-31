@@ -26,7 +26,7 @@ namespace backend.Controllers
         public async Task<ActionResult<IEnumerable<Blog>>> GetBlogs(string searchString = "")
         {
             var query = _context.Blogs.AsQueryable();
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(searchString))    
             {
                 query = query.Where(p => p.Title.Contains(searchString));
             }
